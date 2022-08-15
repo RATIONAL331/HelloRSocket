@@ -29,7 +29,7 @@ import io.rsocket.transport.netty.server.TcpServerTransport;
  *                             | Bi-directional Streaming
  *                             | Fire & Forget
  * ----------------------------|-----------------------------
- * HTTP                        | TCP, WebSocket, UPD(Aeron)
+ * HTTP                        | TCP, WebSocket, UDP(Aeron)
  * ----------------------------|-----------------------------
  * Layer 7                     | Layer 5, 6
  * ----------------------------|-----------------------------
