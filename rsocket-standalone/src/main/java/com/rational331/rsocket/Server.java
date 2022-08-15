@@ -29,11 +29,11 @@ import io.rsocket.transport.netty.server.TcpServerTransport;
  *                             | Bi-directional Streaming
  *                             | Fire & Forget
  * ----------------------------|-----------------------------
- * HTTP						   | TCP, WebSocket, UPD(Aeron)
+ * HTTP                        | TCP, WebSocket, UPD(Aeron)
  * ----------------------------|-----------------------------
- * Layer 7					   | Layer 5, 6
+ * Layer 7                     | Layer 5, 6
  * ----------------------------|-----------------------------
- * JSON						   | Binary
+ * JSON                        | Binary
  * ----------------------------|-----------------------------
  * Client initiated a request  | Publisher & Subscriber
  * ----------------------------|-----------------------------
@@ -41,7 +41,7 @@ import io.rsocket.transport.netty.server.TcpServerTransport;
  * ----------------------------|-----------------------------
  * -                           | Backpressure
  * ----------------------------|-----------------------------
- * Tools Support			   | New Protocol. Lacks of tools
+ * Tools Support               | New Protocol. Lacks of tools
  * ----------------------------|-----------------------------
  */
 
