@@ -7,8 +7,9 @@ import reactor.core.publisher.Mono;
 
 public class SocketAcceptorImpl implements SocketAcceptor {
 	@Override
-	public Mono<RSocket> accept(ConnectionSetupPayload connectionSetupPayload, RSocket rSocket) { // <- client rsocket
+	public Mono<RSocket> accept(ConnectionSetupPayload connectionSetupPayload, RSocket rSocket) { // <- param rSocket is client rsocket
 		System.out.println("SocketAcceptorImpl - Accept Method");
-		return Mono.fromCallable(MathService::new); // server rsocket
+//		Mono.fromCallable(MathService::new);
+		return Mono.fromCallable(() -> new BatchJobService(rSocket)); // return server rsocket
 	}
 }
