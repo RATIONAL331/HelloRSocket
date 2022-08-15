@@ -11,6 +11,13 @@ public class SocketAcceptorImpl implements SocketAcceptor {
 		System.out.println("SocketAcceptorImpl - Accept Method");
 //		Mono.fromCallable(MathService::new);
 //		Mono.fromCallable(() -> new BatchJobService(rSocket)); // <- param rSocket is client rsocket
-		return Mono.fromCallable(FastProducerService::new); // return server rsocket
+		if (isValidClient(connectionSetupPayload.getDataUtf8())) {
+			return Mono.fromCallable(MathService::new);
+		}
+		return Mono.fromCallable(FreeService::new); // return server rsocket
+	}
+
+	private boolean isValidClient(String credentials) {
+		return "user:password".equals(credentials);
 	}
 }
