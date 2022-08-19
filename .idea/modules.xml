@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HelloRSocket.iml" filepath="$PROJECT_DIR$/HelloRSocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rsocket-spring/rsocket-spring.iml" filepath="$PROJECT_DIR$/rsocket-spring/rsocket-spring.iml" />
     </modules>
   </component>
 </project>
