@@ -40,11 +40,13 @@ public class Lec09SessionResumptionTest {
 		         .verifyComplete();
 	}
 
+	// Retry for reconnect -> to wait for the server to be up to send a request
 	private Retry retryStrategy() {
 		return Retry.fixedDelay(100, Duration.ofSeconds(1))
 		            .doBeforeRetry(s -> System.out.println("Retrying connection : " + s.totalRetriesInARow()));
 	}
 
+	// Retry for resume -> for session resumption for streaming requests/responses
 	private Resume resumeStrategy() {
 		return new Resume().retry(Retry.fixedDelay(300, Duration.ofMillis(500))
 		                               .doBeforeRetry(s -> System.out.println("resume -retry: " + s)));
