@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Service
 @RequiredArgsConstructor
 public class MathService {
@@ -25,7 +27,8 @@ public class MathService {
 
 	// request-stream
 	public Flux<ComputationResponseDto> tableStream(Mono<ComputationRequestDto> requestDtoMono) {
-		return requestDtoMono.flatMapMany(requestDto -> Flux.range(1, 10)
+		return requestDtoMono.flatMapMany(requestDto -> Flux.range(1, 1000)
+		                                                    .delayElements(Duration.ofMillis(10))
 		                                                    .map(integer -> new ComputationResponseDto(requestDto.getInput(),
 		                                                                                               requestDto.getInput() * integer)));
 	}

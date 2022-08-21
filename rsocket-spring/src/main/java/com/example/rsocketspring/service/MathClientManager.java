@@ -1,7 +1,6 @@
 package com.example.rsocketspring.service;
 
 import org.springframework.messaging.rsocket.RSocketRequester;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -24,10 +23,10 @@ public class MathClientManager {
 		         .subscribe();
 	}
 
-	@Scheduled(fixedDelay = 1000)
-	public void print() {
-		System.out.println(set);
-	}
+//	@Scheduled(fixedDelay = 1000)
+//	public void print() {
+//		System.out.println(set);
+//	}
 
 	public void notify(int i) {
 		Flux.fromIterable(set)
