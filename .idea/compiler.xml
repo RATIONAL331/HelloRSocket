@@ -10,6 +10,7 @@
         <module name="rsocket-spring" />
         <module name="StockService" />
         <module name="UserService" />
+        <module name="TradingService" />
         <module name="rsocket-standalone" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="StockService" options="-parameters" />
+      <module name="TradingService" options="-parameters" />
       <module name="UserService" options="-parameters" />
       <module name="rsocket-spring" options="-parameters" />
     </option>
