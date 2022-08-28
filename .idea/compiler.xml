@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="StockService" />
-        <module name="rsocket-standalone" />
         <module name="rsocket-spring" />
+        <module name="StockService" />
+        <module name="UserService" />
+        <module name="rsocket-standalone" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="StockService" options="-parameters" />
+      <module name="UserService" options="-parameters" />
       <module name="rsocket-spring" options="-parameters" />
     </option>
   </component>
